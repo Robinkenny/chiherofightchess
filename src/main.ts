@@ -46,14 +46,29 @@ async function main() {
     }
   };
 
-  canvas.addEventListener('click', (ev) => {
+  const handlePointer = (clientX: number, clientY: number) => {
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
-    const x = Math.floor(((ev.clientX - rect.left) * scaleX) / TILE_SIZE);
-    const y = Math.floor(((ev.clientY - rect.top) * scaleY) / TILE_SIZE);
+    const x = Math.floor(((clientX - rect.left) * scaleX) / TILE_SIZE);
+    const y = Math.floor(((clientY - rect.top) * scaleY) / TILE_SIZE);
     if (game.tryMoveKenny(x, y)) refresh();
+  };
+
+  canvas.addEventListener('click', (ev) => {
+    handlePointer(ev.clientX, ev.clientY);
   });
+
+  canvas.addEventListener(
+    'touchend',
+    (ev) => {
+      const t = ev.changedTouches[0];
+      if (!t) return;
+      ev.preventDefault();
+      handlePointer(t.clientX, t.clientY);
+    },
+    { passive: false },
+  );
 
   refresh();
 }

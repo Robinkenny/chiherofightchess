@@ -33,7 +33,8 @@ export function renderSidebar(root: HTMLElement, game: Game, onWait: () => void,
       <h3>操作</h3>
       <ul>
         <li>黃色格：Kenny 可移動範圍（戰棋回合制）</li>
-        <li>點擊移動；收集金黃經驗珠升級更快</li>
+        <li>點擊／點按地圖移動；收集金黃經驗珠升級更快</li>
+        <li>手機：地圖可雙指捲動查看，黃格為可移動範圍</li>
         <li>敵將能力隨你的等級變強，初時較弱</li>
         <li>修改 <code>public/data/heroes.json</code> 可調整百將技能</li>
       </ul>
