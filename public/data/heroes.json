@@ -1,0 +1,2125 @@
+{
+  "version": 1,
+  "description": "百位中國古代名將資料。可修改 baseStats、skill 以調整對戰平衡；Kenny 等級會放大 skill.scalingPerKennyLevel。",
+  "protagonist": {
+    "id": "kenny",
+    "name": "Kenny",
+    "title": "平民",
+    "baseStats": {
+      "hp": 100,
+      "move": 3,
+      "dodge": 0.15
+    }
+  },
+  "spawnRules": {
+    "initialActiveCount": 8,
+    "maxActiveOnMap": 18,
+    "respawnEveryTurns": 4,
+    "enemyBaseLevel": 1
+  },
+  "victory": {
+    "targetLevel": 20
+  },
+  "heroes": [
+    {
+      "id": "liu_bei",
+      "name": "劉備",
+      "dynasty": "三國",
+      "role": "support",
+      "baseStats": {
+        "hp": 60,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "liu_bei_skill",
+        "name": "仁德之光",
+        "description": "同格三格內友軍回復生命，體現仁兵之師。",
+        "type": "heal_aoe",
+        "basePower": 18,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "guan_yu",
+      "name": "關羽",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 68,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "guan_yu_skill",
+        "name": "青龍偃月",
+        "description": "單體重劈，破甲傷害隨怒氣提升。",
+        "type": "armor_break",
+        "basePower": 28,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "zhang_fei",
+      "name": "張飛",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhang_fei_skill",
+        "name": "長坂獅吼",
+        "description": "直線範圍震懾，使敵下回合無法移動。",
+        "type": "stun_line",
+        "basePower": 22,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhuge_liang",
+      "name": "諸葛亮",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 16,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhuge_liang_skill",
+        "name": "八陣迷局",
+        "description": "在目標格設迷陣，踏入者受術傷並迷失方向。",
+        "type": "trap_zone",
+        "basePower": 24,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "zhao_yun",
+      "name": "趙雲",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhao_yun_skill",
+        "name": "龍膽突進",
+        "description": "穿越敵陣的突刺，對路徑上每格造成傷害。",
+        "type": "dash_line",
+        "basePower": 26,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "ma_chao",
+      "name": "馬超",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 60,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "ma_chao_skill",
+        "name": "西涼鐵騎",
+        "description": "斜向衝鋒兩格，額外移動後攻擊。",
+        "type": "charge",
+        "basePower": 25,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "huang_zhong",
+      "name": "黃忠",
+      "dynasty": "三國",
+      "role": "archer",
+      "baseStats": {
+        "hp": 68,
+        "attack": 22,
+        "range": 4,
+        "move": 2
+      },
+      "skill": {
+        "id": "huang_zhong_skill",
+        "name": "百步穿楊",
+        "description": "超遠距離精準射擊，無視一格障礙。",
+        "type": "snipe",
+        "basePower": 30,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wei_yan",
+      "name": "魏延",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "wei_yan_skill",
+        "name": "子午奇襲",
+        "description": "繞後攻擊，若從側背命中傷害加倍。",
+        "type": "flank",
+        "basePower": 23,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "cao_cao",
+      "name": "曹操",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 12,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "cao_cao_skill",
+        "name": "挾天子令",
+        "description": "降低周圍敵士氣，使其攻擊力下降。",
+        "type": "debuff_aura",
+        "basePower": 20,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "simayi",
+      "name": "司馬懿",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 14,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "simayi_skill",
+        "name": "堅壁清野",
+        "description": "本回合免傷並反彈部分傷害。",
+        "type": "reflect",
+        "basePower": 18,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "sun_quan",
+      "name": "孫權",
+      "dynasty": "三國",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "sun_quan_skill",
+        "name": "江東水師",
+        "description": "在水域旁攻擊力提升並可斜向移動。",
+        "type": "terrain_buff",
+        "basePower": 21,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "zhou_yu",
+      "name": "周瑜",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 68,
+        "attack": 18,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhou_yu_skill",
+        "name": "火攻連環",
+        "description": "點燃相鄰兩格，下回合造成燃燒傷害。",
+        "type": "burn_aoe",
+        "basePower": 27,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "lu_bu",
+      "name": "呂布",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "lu_bu_skill",
+        "name": "人中呂布",
+        "description": "單格最高爆發傷害，但自身受反傷。",
+        "type": "heavy_strike",
+        "basePower": 35,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "diao_chan",
+      "name": "貂蟬",
+      "dynasty": "三國",
+      "role": "support",
+      "baseStats": {
+        "hp": 84,
+        "attack": 22,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "diao_chan_skill",
+        "name": "連環離間",
+        "description": "使目標攻擊最近友軍而非 Kenny。",
+        "type": "confuse",
+        "basePower": 15,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "huang_gai",
+      "name": "黃蓋",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "huang_gai_skill",
+        "name": "苦肉詐降",
+        "description": "自損生命換取下回合必暴擊。",
+        "type": "self_sacrifice",
+        "basePower": 26,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "gan_ning",
+      "name": "甘寧",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 60,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "gan_ning_skill",
+        "name": "錦帆夜襲",
+        "description": "夜間（每五回合）移動+2並首攻必中。",
+        "type": "ambush",
+        "basePower": 24,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "taishi_ci",
+      "name": "太史慈",
+      "dynasty": "三國",
+      "role": "archer",
+      "baseStats": {
+        "hp": 68,
+        "attack": 14,
+        "range": 4,
+        "move": 2
+      },
+      "skill": {
+        "id": "taishi_ci_skill",
+        "name": "篤義神射",
+        "description": "對同一目標連射兩次。",
+        "type": "double_shot",
+        "basePower": 22,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "xiahou_dun",
+      "name": "夏侯惇",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "xiahou_dun_skill",
+        "name": "拔矢啖睛",
+        "description": "受傷後反擊並回復少量生命。",
+        "type": "counter",
+        "basePower": 23,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhang_liao",
+      "name": "張遼",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 84,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhang_liao_skill",
+        "name": "威震逍遙",
+        "description": "以少敵多，周圍敵越多傷害越高。",
+        "type": "scale_by_enemies",
+        "basePower": 28,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "xu_chu",
+      "name": "許褚",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "xu_chu_skill",
+        "name": "虎癡裸衣",
+        "description": "捨棄防禦換取超高攻擊。",
+        "type": "glass_cannon",
+        "basePower": 32,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "liubei_shu",
+      "name": "龐統",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 60,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "liubei_shu_skill",
+        "name": "連環計",
+        "description": "連鎖傷害跳至相鄰第二目標。",
+        "type": "chain",
+        "basePower": 25,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "fa_zheng",
+      "name": "法正",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 68,
+        "attack": 10,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "fa_zheng_skill",
+        "name": "定軍奇謀",
+        "description": "使下一個友軍技能冷卻清零。",
+        "type": "cooldown_reset",
+        "basePower": 19,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "jiang_wei",
+      "name": "姜維",
+      "dynasty": "三國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "jiang_wei_skill",
+        "name": "九伐中原",
+        "description": "每次攻擊疊加傷害層數。",
+        "type": "stacking",
+        "basePower": 24,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "deng_ai",
+      "name": "鄧艾",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 14,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "deng_ai_skill",
+        "name": "陰平古道",
+        "description": "穿越懸崖邊緣隱秘路徑突襲。",
+        "type": "cliff_path",
+        "basePower": 26,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhong_hui",
+      "name": "鍾會",
+      "dynasty": "三國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 16,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhong_hui_skill",
+        "name": "分進合擊",
+        "description": "召喚分身協同攻擊一次。",
+        "type": "summon_clone",
+        "basePower": 23,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "liu_bang",
+      "name": "劉邦",
+      "dynasty": "漢",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "liu_bang_skill",
+        "name": "約法三章",
+        "description": "降低 Kenny 移動力但提升敵方內鬨機率。",
+        "type": "slow_debuff",
+        "basePower": 17,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "xiang_yu",
+      "name": "項羽",
+      "dynasty": "秦末",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 68,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "xiang_yu_skill",
+        "name": "破釜沉舟",
+        "description": "本回合攻擊翻倍且無法 retreat。",
+        "type": "all_in",
+        "basePower": 34,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "han_xin",
+      "name": "韓信",
+      "dynasty": "漢",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "han_xin_skill",
+        "name": "背水一戰",
+        "description": "被包圍時全屬性大幅提升。",
+        "type": "desperate_buff",
+        "basePower": 29,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "zhang_liang",
+      "name": "張良",
+      "dynasty": "漢",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 10,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhang_liang_skill",
+        "name": "運籌帷幄",
+        "description": "預判 Kenny 下步位置並預先佔位。",
+        "type": "predict_move",
+        "basePower": 22,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "wei_qing",
+      "name": "衛青",
+      "dynasty": "漢",
+      "role": "archer",
+      "baseStats": {
+        "hp": 92,
+        "attack": 12,
+        "range": 4,
+        "move": 2
+      },
+      "skill": {
+        "id": "wei_qing_skill",
+        "name": "輕騎奔襲",
+        "description": "長距離騎射後仍可移動一格。",
+        "type": "shoot_and_move",
+        "basePower": 24,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "huo_qubing",
+      "name": "霍去病",
+      "dynasty": "漢",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 60,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "huo_qubing_skill",
+        "name": "封狼居胥",
+        "description": "衝入敵陣中心造成圓形傷害。",
+        "type": "aoe_burst",
+        "basePower": 31,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "li_guang",
+      "name": "李廣",
+      "dynasty": "漢",
+      "role": "archer",
+      "baseStats": {
+        "hp": 68,
+        "attack": 16,
+        "range": 4,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_guang_skill",
+        "name": "飛將射石",
+        "description": "對障礙後目標仍有機率命中。",
+        "type": "indirect_shot",
+        "basePower": 26,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "ban_chao",
+      "name": "班超",
+      "dynasty": "漢",
+      "role": "leader",
+      "baseStats": {
+        "hp": 76,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "ban_chao_skill",
+        "name": "投筆從戎",
+        "description": "士氣提升，周圍友軍移動+1。",
+        "type": "buff_move_aura",
+        "basePower": 20,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhao_tuo",
+      "name": "趙佗",
+      "dynasty": "漢",
+      "role": "leader",
+      "baseStats": {
+        "hp": 84,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhao_tuo_skill",
+        "name": "南越鎮守",
+        "description": "在林間獲得隱身一回合。",
+        "type": "stealth_forest",
+        "basePower": 21,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wang_mang",
+      "name": "王莽",
+      "dynasty": "新",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "wang_mang_skill",
+        "name": "托古改制",
+        "description": "隨機改變一格地形效果。",
+        "type": "terrain_shuffle",
+        "basePower": 18,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "guang_wu",
+      "name": "劉秀",
+      "dynasty": "漢",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "guang_wu_skill",
+        "name": "昆陽神助",
+        "description": "低生命時觸發全屏雷擊一次。",
+        "type": "emergency_aoe",
+        "basePower": 27,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "dou_xian",
+      "name": "竇憲",
+      "dynasty": "漢",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 68,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "dou_xian_skill",
+        "name": "勒石燕然",
+        "description": "擊退敵人一格並造成傷害。",
+        "type": "knockback",
+        "basePower": 23,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "chen_tang",
+      "name": "陳湯",
+      "dynasty": "漢",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "chen_tang_skill",
+        "name": "明犯強漢",
+        "description": "對遠距離目標傷害提升。",
+        "type": "long_range_bonus",
+        "basePower": 25,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "ban_gu",
+      "name": "班固",
+      "dynasty": "漢",
+      "role": "support",
+      "baseStats": {
+        "hp": 84,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "ban_gu_skill",
+        "name": "史筆定讀",
+        "description": "揭露 Kenny 隱身與陷阱位置。",
+        "type": "reveal",
+        "basePower": 16,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "qin_shihuang",
+      "name": "秦始皇",
+      "dynasty": "秦",
+      "role": "leader",
+      "baseStats": {
+        "hp": 92,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "qin_shihuang_skill",
+        "name": "統一六國",
+        "description": "召喚兩名低階秦兵協助。",
+        "type": "summon_soldiers",
+        "basePower": 22,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "bai_qi",
+      "name": "白起",
+      "dynasty": "戰國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 60,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "bai_qi_skill",
+        "name": "長平殺神",
+        "description": "對低生命目標即斬（高傷害）。",
+        "type": "execute",
+        "basePower": 33,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "wang_jian",
+      "name": "王翦",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 68,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "wang_jian_skill",
+        "name": "穩紮穩打",
+        "description": "每三回合攻擊必中且暴擊。",
+        "type": "steady_strike",
+        "basePower": 26,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "li_mu",
+      "name": "李牧",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 10,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_mu_skill",
+        "name": "北逐匈奴",
+        "description": "對衝鋒敵人設反騎陷阱。",
+        "type": "anti_charge",
+        "basePower": 24,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "lian_po",
+      "name": "廉頗",
+      "dynasty": "戰國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 84,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "lian_po_skill",
+        "name": "堅壁清野",
+        "description": "固守一格，受擊減傷並反傷。",
+        "type": "fortify",
+        "basePower": 22,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "lin_xiangru",
+      "name": "藺相如",
+      "dynasty": "戰國",
+      "role": "support",
+      "baseStats": {
+        "hp": 92,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "lin_xiangru_skill",
+        "name": "完璧歸趙",
+        "description": "護盾抵擋下一次對友軍的致命傷。",
+        "type": "shield_ally",
+        "basePower": 19,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "sun_wu",
+      "name": "孫武",
+      "dynasty": "春秋",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 60,
+        "attack": 16,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "sun_wu_skill",
+        "name": "知己知彼",
+        "description": "複製 Kenny 上一回合的移動模式追擊。",
+        "type": "mirror_move",
+        "basePower": 23,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wu_qi",
+      "name": "吳起",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 68,
+        "attack": 18,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "wu_qi_skill",
+        "name": "治軍嚴律",
+        "description": "友軍攻擊力提升但受控更久。",
+        "type": "discipline_aura",
+        "basePower": 21,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "yue_yi",
+      "name": "樂毅",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 20,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "yue_yi_skill",
+        "name": "連下七十城",
+        "description": "每回合佔領一格視野（減 Kenny 迴避）。",
+        "type": "vision_control",
+        "basePower": 20,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "tian_dan",
+      "name": "田單",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "tian_dan_skill",
+        "name": "火牛陣",
+        "description": "直線衝鋒並點燃路徑。",
+        "type": "fire_charge",
+        "basePower": 28,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "su_qin",
+      "name": "蘇秦",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 10,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "su_qin_skill",
+        "name": "合縱六國",
+        "description": "連結三名友軍共享一次攻擊。",
+        "type": "link_attack",
+        "basePower": 24,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "zhang_yi",
+      "name": "張儀",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 60,
+        "attack": 12,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhang_yi_skill",
+        "name": "連橫破縱",
+        "description": "使兩名敵方 AI 互相攻擊一回合。",
+        "type": "turn_ally",
+        "basePower": 18,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "qu_yuan",
+      "name": "屈原",
+      "dynasty": "戰國",
+      "role": "support",
+      "baseStats": {
+        "hp": 68,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "qu_yuan_skill",
+        "name": "離騷悲歌",
+        "description": "降低 Kenny 士氣，迴避率下降。",
+        "type": "morale_down",
+        "basePower": 17,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wu_zixu",
+      "name": "伍子胥",
+      "dynasty": "春秋",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "wu_zixu_skill",
+        "name": "掘墓鞭屍",
+        "description": "對曾傷害過自己的目標額外仇恨傷害。",
+        "type": "grudge",
+        "basePower": 27,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "gou_jian",
+      "name": "勾踐",
+      "dynasty": "春秋",
+      "role": "leader",
+      "baseStats": {
+        "hp": 84,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "gou_jian_skill",
+        "name": "臥薪嘗膽",
+        "description": "每受一次挫敗下次攻擊更強。",
+        "type": "vengeance_stack",
+        "basePower": 25,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "fan_li",
+      "name": "范蠡",
+      "dynasty": "春秋",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 20,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "fan_li_skill",
+        "name": "陶朱公計",
+        "description": "經濟壓制：Kenny 獲得經驗減半一回合。",
+        "type": "xp_debuff",
+        "basePower": 16,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wen_zhong",
+      "name": "文種",
+      "dynasty": "春秋",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 60,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "wen_zhong_skill",
+        "name": "九術破吳",
+        "description": "隨機施加九種減益之一。",
+        "type": "random_debuff",
+        "basePower": 22,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "li_bing",
+      "name": "李冰",
+      "dynasty": "秦",
+      "role": "support",
+      "baseStats": {
+        "hp": 68,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_bing_skill",
+        "name": "都江堰水",
+        "description": "改變相鄰水域流向，減慢 Kenny。",
+        "type": "water_control",
+        "basePower": 20,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "meng_tian",
+      "name": "蒙恬",
+      "dynasty": "秦",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "meng_tian_skill",
+        "name": "長城堅守",
+        "description": "在懸崖邊獲得額外防禦。",
+        "type": "cliff_defense",
+        "basePower": 24,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "li_si",
+      "name": "李斯",
+      "dynasty": "秦",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 14,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_si_skill",
+        "name": "焚書策",
+        "description": "封印 Kenny 一項升級效果一回合。",
+        "type": "seal_upgrade",
+        "basePower": 19,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "zhao_she",
+      "name": "趙奢",
+      "dynasty": "戰國",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 16,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhao_she_skill",
+        "name": "狹路相逢",
+        "description": "在窄道地形傷害加倍。",
+        "type": "choke_bonus",
+        "basePower": 23,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "li_yuan",
+      "name": "李淵",
+      "dynasty": "唐",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_yuan_skill",
+        "name": "晉陽起兵",
+        "description": "開局三回合內友軍攻速提升。",
+        "type": "early_rush",
+        "basePower": 22,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "li_shimin",
+      "name": "李世民",
+      "dynasty": "唐",
+      "role": "leader",
+      "baseStats": {
+        "hp": 68,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_shimin_skill",
+        "name": "玄武門變",
+        "description": "優先斬首低血目標。",
+        "type": "focus_fire",
+        "basePower": 28,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "li_jing",
+      "name": "李靖",
+      "dynasty": "唐",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_jing_skill",
+        "name": "李衛公兵法",
+        "description": "預告下回合攻擊範圍（危險格標示）。",
+        "type": "telegraph",
+        "basePower": 25,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "xue_rengui",
+      "name": "薛仁貴",
+      "dynasty": "唐",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 84,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "xue_rengui_skill",
+        "name": "三箭定天山",
+        "description": "三連射，第三箭必暴擊。",
+        "type": "triple_shot",
+        "basePower": 29,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "qin_qiong",
+      "name": "秦瓊",
+      "dynasty": "唐",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "qin_qiong_skill",
+        "name": "馬踏黃巢",
+        "description": "對包圍 Kenny 的敵人額外傷害。",
+        "type": "rescue_strike",
+        "basePower": 26,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "yu_chi_gong",
+      "name": "尉遲恭",
+      "dynasty": "唐",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 60,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "yu_chi_gong_skill",
+        "name": "門神鎮宅",
+        "description": "護衛相鄰友軍分擔傷害。",
+        "type": "guard",
+        "basePower": 22,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "cheng_yaojin",
+      "name": "程咬金",
+      "dynasty": "唐",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 68,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "cheng_yaojin_skill",
+        "name": "三板斧",
+        "description": "前三下攻擊遞增傷害。",
+        "type": "combo_three",
+        "basePower": 24,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "guo_ziyi",
+      "name": "郭子儀",
+      "dynasty": "唐",
+      "role": "leader",
+      "baseStats": {
+        "hp": 76,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "guo_ziyi_skill",
+        "name": "再造唐朝",
+        "description": "全軍小幅回復並解控。",
+        "type": "mass_heal",
+        "basePower": 20,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "an_lushan",
+      "name": "安祿山",
+      "dynasty": "唐",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 84,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "an_lushan_skill",
+        "name": "范陽叛旗",
+        "description": "召喚叛軍佔據一格。",
+        "type": "summon_block",
+        "basePower": 23,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhang_xun",
+      "name": "張巡",
+      "dynasty": "唐",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 22,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhang_xun_skill",
+        "name": "睢陽死守",
+        "description": "生命越低防禦越高。",
+        "type": "last_stand",
+        "basePower": 25,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "yue_fei",
+      "name": "岳飛",
+      "dynasty": "宋",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 60,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "yue_fei_skill",
+        "name": "精忠報國",
+        "description": "對「退卻」狀態 Kenny 追擊傷害提升。",
+        "type": "pursuit",
+        "basePower": 30,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "han_shizhong",
+      "name": "韓世忠",
+      "dynasty": "宋",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 68,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "han_shizhong_skill",
+        "name": "黃天蕩",
+        "description": "水戰圈困，限制 Kenny 兩格內移動。",
+        "type": "cage",
+        "basePower": 24,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhao_kuangyin",
+      "name": "趙匡胤",
+      "dynasty": "宋",
+      "role": "leader",
+      "baseStats": {
+        "hp": 76,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhao_kuangyin_skill",
+        "name": "杯酒釋兵",
+        "description": "使一名敵方單位（Kenny）無法使用技能一回合。",
+        "type": "silence",
+        "basePower": 18,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "yang_ye",
+      "name": "楊業",
+      "dynasty": "宋",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 84,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "yang_ye_skill",
+        "name": "楊家將",
+        "description": "家族連携，與另一楊將相鄰時攻+。",
+        "type": "family_synergy",
+        "basePower": 23,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "mu_guiying",
+      "name": "穆桂英",
+      "dynasty": "宋",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "mu_guiying_skill",
+        "name": "掛帥出征",
+        "description": "女性將領光環，友軍對 Kenny 命中+。",
+        "type": "hit_aura",
+        "basePower": 24,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "she_saihua",
+      "name": "佘賽花",
+      "dynasty": "宋",
+      "role": "archer",
+      "baseStats": {
+        "hp": 60,
+        "attack": 20,
+        "range": 4,
+        "move": 2
+      },
+      "skill": {
+        "id": "she_saihua_skill",
+        "name": "百發百中",
+        "description": "遠程必中一次（冷卻長）。",
+        "type": "guaranteed_hit",
+        "basePower": 27,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wen_tianxiang",
+      "name": "文天祥",
+      "dynasty": "宋",
+      "role": "leader",
+      "baseStats": {
+        "hp": 68,
+        "attack": 22,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "wen_tianxiang_skill",
+        "name": "正氣歌",
+        "description": "降低 Kenny 在包圍圈內的閃避。",
+        "type": "anti_dodge",
+        "basePower": 19,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "qi_jiguang",
+      "name": "戚繼光",
+      "dynasty": "明",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 10,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "qi_jiguang_skill",
+        "name": "鴛鴦陣",
+        "description": "步槍協同，前後排交替攻擊。",
+        "type": "formation",
+        "basePower": 26,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zheng_chenggong",
+      "name": "鄭成功",
+      "dynasty": "明",
+      "role": "leader",
+      "baseStats": {
+        "hp": 84,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zheng_chenggong_skill",
+        "name": "收復台灣",
+        "description": "從水邊登陸突襲。",
+        "type": "amphibious",
+        "basePower": 25,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "yuan_chonghuan",
+      "name": "袁崇煥",
+      "dynasty": "明",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 92,
+        "attack": 14,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "yuan_chonghuan_skill",
+        "name": "寧遠大捷",
+        "description": "對首個接近的敵人超高傷害（首攻）。",
+        "type": "first_strike",
+        "basePower": 28,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "yu_qian",
+      "name": "于謙",
+      "dynasty": "明",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "yu_qian_skill",
+        "name": "北京保衛",
+        "description": "城防光環，友軍在樹林旁減傷。",
+        "type": "forest_defense",
+        "basePower": 21,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zheng_he",
+      "name": "鄭和",
+      "dynasty": "明",
+      "role": "leader",
+      "baseStats": {
+        "hp": 68,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zheng_he_skill",
+        "name": "七下西洋",
+        "description": "大範圍偵察，顯示 Kenny 三回合路徑偏好。",
+        "type": "scout",
+        "basePower": 17,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "wang_yangming",
+      "name": "王陽明",
+      "dynasty": "明",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 20,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "wang_yangming_skill",
+        "name": "心學破陣",
+        "description": "無視一次 Kenny 的閃避（真傷）。",
+        "type": "true_damage",
+        "basePower": 26,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "hu_zongxian",
+      "name": "胡宗憲",
+      "dynasty": "明",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "hu_zongxian_skill",
+        "name": "東南平倭",
+        "description": "對「平民」Kenny 額外鎖定優先級。",
+        "type": "priority_target",
+        "basePower": 22,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "qiu_jin",
+      "name": "秋瑾",
+      "dynasty": "清",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "qiu_jin_skill",
+        "name": "軒亭烈女",
+        "description": "低血自爆式突擊。",
+        "type": "suicide_rush",
+        "basePower": 29,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "lin_zexu",
+      "name": "林則徐",
+      "dynasty": "清",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "lin_zexu_skill",
+        "name": "銷煙抗英",
+        "description": "淨化一格 debuff 並對 Kenny 施放減速煙霧。",
+        "type": "smoke_slow",
+        "basePower": 20,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "zuo_zongtang",
+      "name": "左宗棠",
+      "dynasty": "清",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 68,
+        "attack": 14,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zuo_zongtang_skill",
+        "name": "收復新疆",
+        "description": "長途奔襲，每回合移動距離遞增。",
+        "type": "escalating_move",
+        "basePower": 24,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zeng_guofan",
+      "name": "曾國藩",
+      "dynasty": "清",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 76,
+        "attack": 16,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "zeng_guofan_skill",
+        "name": "湘軍團練",
+        "description": "築壘推進，每回合佔一格營寨（障礙）。",
+        "type": "build_block",
+        "basePower": 21,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "li_hongzhang",
+      "name": "李鴻章",
+      "dynasty": "清",
+      "role": "leader",
+      "baseStats": {
+        "hp": 84,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "li_hongzhang_skill",
+        "name": "洋務中興",
+        "description": "強化一名友軍裝備（攻+防+）。",
+        "type": "empower_ally",
+        "basePower": 20,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "hua_mulan",
+      "name": "花木蘭",
+      "dynasty": "北朝",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 20,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "hua_mulan_skill",
+        "name": "代父從軍",
+        "description": "偽裝接近，首回合 Kenny 無法辨識其攻擊範圍。",
+        "type": "disguise",
+        "basePower": 25,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "chen_ping",
+      "name": "陳平",
+      "dynasty": "漢",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 60,
+        "attack": 22,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "chen_ping_skill",
+        "name": "六出奇計",
+        "description": "隨機觸發六種計策之一。",
+        "type": "random_trick",
+        "basePower": 23,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "ji_bu",
+      "name": "季布",
+      "dynasty": "漢",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 68,
+        "attack": 10,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "ji_bu_skill",
+        "name": "一諾千金",
+        "description": "鎖定 Kenny 若其本回合違約（進入危險格）。",
+        "type": "punish_risk",
+        "basePower": 22,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "ying_bu",
+      "name": "英布",
+      "dynasty": "漢",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "ying_bu_skill",
+        "name": "九江叛將",
+        "description": "叛變式雙向攻擊，不顧友軍。",
+        "type": "reckless_aoe",
+        "basePower": 27,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "zhou_bo",
+      "name": "周勃",
+      "dynasty": "漢",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 84,
+        "attack": 14,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "zhou_bo_skill",
+        "name": "安劉定國",
+        "description": "清除附近 debuff 並穩定陣線。",
+        "type": "cleanse",
+        "basePower": 19,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "chen_qingzhi",
+      "name": "陳慶之",
+      "dynasty": "南朝",
+      "role": "leader",
+      "baseStats": {
+        "hp": 92,
+        "attack": 16,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "chen_qingzhi_skill",
+        "name": "白袍將軍",
+        "description": "以少擊眾，Kenny 等級越高陳越強（同步 scaling）。",
+        "type": "sync_scale",
+        "basePower": 26,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "xiao_daocheng",
+      "name": "蕭道成",
+      "dynasty": "南朝",
+      "role": "leader",
+      "baseStats": {
+        "hp": 60,
+        "attack": 18,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "xiao_daocheng_skill",
+        "name": "齊高帝略",
+        "description": "篡位式突襲，從後排直取 Kenny。",
+        "type": "backline_strike",
+        "basePower": 24,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "xie_an",
+      "name": "謝安",
+      "dynasty": "東晉",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 68,
+        "attack": 20,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "xie_an_skill",
+        "name": "淝水從容",
+        "description": "Kenny 失誤進入包圍時全軍集火。",
+        "type": "punish_surround",
+        "basePower": 25,
+        "cooldown": 2,
+        "scalingPerKennyLevel": 1
+      }
+    },
+    {
+      "id": "liu_yu",
+      "name": "劉裕",
+      "dynasty": "南朝",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 76,
+        "attack": 22,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "liu_yu_skill",
+        "name": "寄奴北伐",
+        "description": "連續攻擊直到未命中為止。",
+        "type": "multi_attack",
+        "basePower": 28,
+        "cooldown": 3,
+        "scalingPerKennyLevel": 1.5
+      }
+    },
+    {
+      "id": "wang_meng2",
+      "name": "王猛",
+      "dynasty": "前秦",
+      "role": "strategist",
+      "baseStats": {
+        "hp": 84,
+        "attack": 10,
+        "range": 3,
+        "move": 2
+      },
+      "skill": {
+        "id": "wang_meng2_skill",
+        "name": "輔秦定燕",
+        "description": "壓制 Kenny 回復效果。",
+        "type": "heal_block",
+        "basePower": 20,
+        "cooldown": 4,
+        "scalingPerKennyLevel": 2
+      }
+    },
+    {
+      "id": "murong_chui",
+      "name": "慕容垂",
+      "dynasty": "十六國",
+      "role": "warrior",
+      "baseStats": {
+        "hp": 92,
+        "attack": 12,
+        "range": 1,
+        "move": 2
+      },
+      "skill": {
+        "id": "murong_chui_skill",
+        "name": "參合陂恨",
+        "description": "復仇標記 Kenny，標記期間必追擊。",
+        "type": "mark_hunt",
+        "basePower": 27,
+        "cooldown": 5,
+        "scalingPerKennyLevel": 1
+      }
+    }
+  ]
+}
