@@ -1,8 +1,8 @@
-import { Game } from './game/Game';
-import { drawGame } from './render/draw';
-import { renderSidebar } from './ui/sidebar';
+import { RealtimeGame } from './rt/RealtimeGame';
+import { Scene3D } from './rt/Scene3D';
+import { InputController } from './rt/input';
+import { renderRealtimeSidebar } from './ui/sidebarRt';
 import type { HeroesData } from './types';
-import { MAP_HEIGHT, MAP_WIDTH, TILE_SIZE } from './constants';
 
 async function loadHeroes(): Promise<HeroesData> {
   const res = await fetch('/data/heroes.json');
@@ -18,59 +18,50 @@ function showOverlay(html: string, visible: boolean) {
 
 async function main() {
   const canvas = document.getElementById('game') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d')!;
   const sidebar = document.getElementById('sidebar')!;
-
-  canvas.width = MAP_WIDTH * TILE_SIZE;
-  canvas.height = MAP_HEIGHT * TILE_SIZE;
+  const wrap = document.querySelector('.canvas-wrap') as HTMLElement;
 
   const data = await loadHeroes();
-  let game = new Game(data);
+  let game = new RealtimeGame(data);
+  let scene = new Scene3D(canvas, wrap, game);
+  const input = new InputController();
+  input.bind();
 
-  const refresh = () => {
-    drawGame(ctx, game);
-    renderSidebar(sidebar, game, () => {
-      game.waitTurn();
-      refresh();
-    }, () => {
-      game.reset();
-      refresh();
+  let uiThrottle = 0;
+
+  const refreshUi = () => {
+    renderRealtimeSidebar(sidebar, game, () => {
+      scene.dispose();
+      game = new RealtimeGame(data);
+      scene = new Scene3D(canvas, wrap, game);
+      refreshUi();
     });
 
     if (game.phase === 'won') {
-      showOverlay('<div class="modal win"><h2>大捷</h2><p>Kenny 已達 20 級，成功在百將追擊下求生！</p></div>', true);
+      showOverlay('<div class="modal win"><h2>大捷</h2><p>Kenny 在 3D 戰場達 20 級！</p></div>', true);
     } else if (game.phase === 'lost') {
-      showOverlay('<div class="modal lose"><h2>兵敗</h2><p>被古代名將擊倒。點「重新開始」再戰。</p></div>', true);
+      showOverlay('<div class="modal lose"><h2>兵敗</h2><p>被名將擊倒。按重新開始。</p></div>', true);
     } else {
       showOverlay('', false);
     }
   };
 
-  const handlePointer = (clientX: number, clientY: number) => {
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    const x = Math.floor(((clientX - rect.left) * scaleX) / TILE_SIZE);
-    const y = Math.floor(((clientY - rect.top) * scaleY) / TILE_SIZE);
-    if (game.tryMoveKenny(x, y)) refresh();
+  refreshUi();
+
+  const loop = () => {
+    const { x, z } = input.getMoveVector();
+    scene.tick(x, z, () => {
+      uiThrottle++;
+      if (uiThrottle % 12 === 0) refreshUi();
+    });
+    requestAnimationFrame(loop);
   };
+  requestAnimationFrame(loop);
 
-  canvas.addEventListener('click', (ev) => {
-    handlePointer(ev.clientX, ev.clientY);
-  });
-
-  canvas.addEventListener(
-    'touchend',
-    (ev) => {
-      const t = ev.changedTouches[0];
-      if (!t) return;
-      ev.preventDefault();
-      handlePointer(t.clientX, t.clientY);
-    },
-    { passive: false },
-  );
-
-  refresh();
+  if (wrap) {
+    const ro = new ResizeObserver(() => scene.resize());
+    ro.observe(wrap);
+  }
 }
 
 main().catch((err) => {
