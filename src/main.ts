@@ -1,5 +1,5 @@
 import { Game } from './game/Game';
-import { drawGame } from './render/draw';
+import { drawGame, tickRenderFrame } from './render/draw';
 import { renderSidebar } from './ui/sidebar';
 import type { HeroesData } from './types';
 import { MAP_HEIGHT, MAP_WIDTH, TILE_SIZE } from './constants';
@@ -27,14 +27,13 @@ async function main() {
   const data = await loadHeroes();
   let game = new Game(data);
 
-  const refresh = () => {
-    drawGame(ctx, game);
+  const refreshUi = () => {
     renderSidebar(sidebar, game, () => {
       game.waitTurn();
-      refresh();
+      refreshUi();
     }, () => {
       game.reset();
-      refresh();
+      refreshUi();
     });
 
     if (game.phase === 'won') {
@@ -52,7 +51,7 @@ async function main() {
     const scaleY = canvas.height / rect.height;
     const x = Math.floor(((clientX - rect.left) * scaleX) / TILE_SIZE);
     const y = Math.floor(((clientY - rect.top) * scaleY) / TILE_SIZE);
-    if (game.tryMoveKenny(x, y)) refresh();
+    if (game.tryMoveKenny(x, y)) refreshUi();
   };
 
   canvas.addEventListener('click', (ev) => {
@@ -70,7 +69,14 @@ async function main() {
     { passive: false },
   );
 
-  refresh();
+  refreshUi();
+
+  const paintLoop = () => {
+    tickRenderFrame();
+    drawGame(ctx, game);
+    requestAnimationFrame(paintLoop);
+  };
+  requestAnimationFrame(paintLoop);
 }
 
 main().catch((err) => {
